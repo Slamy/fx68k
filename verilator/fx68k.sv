@@ -69,7 +69,7 @@ module fx68k(
 	input BRn, BGACKn,
 	input IPL0n, input IPL1n, input IPL2n,
 	input [15:0] iEdb, output [15:0] oEdb,
-	output [23:1] eab
+	output [31:1] eab
 	);
 	// CPU registers
 	wire [31:0] PC, D0,D1,D2,D3,D4,D5,D6,D7, A0,A1,A2,A3,A4,A5,A6,A7;
@@ -1165,7 +1165,7 @@ module excUnit( input Clks_clk, input Clks_extReset,
 	output [15:0] AblOut,
 	output logic [15:0] Irc,
 	output logic [15:0] oEdb,
-	output logic [23:1] eab,
+	output logic [31:1] eab,
 	output logic [31:0]  PC, D0, D1, D2, D3, D4, D5, D6, D7, A0, A1, A2, A3, A4, A5, A6, A7);
 
 localparam REG_USP = 15;
@@ -1490,7 +1490,7 @@ localparam REG_DT = 17;
 		end
 	end
 
-	assign eab = aob[23:1];
+	assign eab = aob[31:1];
 	assign aob0 = aob[0];
 
 	// AU
